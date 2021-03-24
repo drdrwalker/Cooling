@@ -1,0 +1,10 @@
+      parameter ( mlev = ngrd )
+ 
+      logical ifinup(2000)
+ 
+      common /nest/ delx(ngrd), dtgr(ngrd), 
+     &              indxgr(0:ngrd,mlev), idxcgr(ngrd), idxfgr(ngrd),
+     &              levlgr(ngrd,3), norgin(ngrd,3),
+     &              ishedul(2000), ifinup, nodenr, maxlev(2)
+     &              
+ 

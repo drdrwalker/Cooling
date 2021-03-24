@@ -1,0 +1,11 @@
+      common /ppdisk/ r_in, r_out, au, specr, smltem
+
+      common /cooling/ bcool, tirr, tirr4, ergirr, cnyn, sbyn
+
+      common /opacity/ kap1, kap2, kap3, kap4, kap5, kap6, kap7, kap8,
+     &                 rhoex4, rhoex5, rhoex6, rhoex7, temex1, temex2,
+     &                 temex3, temex4, temex5, temex6, temex7, ttran1,
+     &                 ttran2
+
+      common /aqdisk/ omegak(qx,qy,ngrd), xy_rs(qx,qy,ngrd),
+     &                eiprior(qx,qy,qz,ngrd)

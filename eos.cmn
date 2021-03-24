@@ -1,0 +1,11 @@
+      integer*4  nro, nte, nye, nroent, nteent, nyeent
+      parameter ( nro=180, nte=120, nye=50 )
+      parameter ( nroent=180, nteent=120, nyeent=50 )
+      real*8  rol(nro), tel(nte), yei(nye)
+      real*8  rolent(nroent), telent(nteent), yeient(nyeent)
+      real*8  prel(nro,nte,nye), ergl(nro,nte,nye), gmc(nro,nte,nye),
+     &         tcn(nro,nte,nye),  tcp(nro,nte,nye), eco(nye),
+     &        entl(nroent,nteent,nyeent)
+
+      common /eostab/ rol, tel, yei, prel, ergl, gmc, tcn, tcp, eco,
+     &                rolent, telent, yeient, entl

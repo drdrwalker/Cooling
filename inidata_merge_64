@@ -1,0 +1,33 @@
+' ---------------------------------------------------------------------'
+' !  Simulation of PPD (64x64x16 grid points, 4 nested grids)         !'
+' !  hydrodynamics via PPM                                            !'
+' ---------------------------------------------------------------------'
+' Number of timesteps for this run ..........' 'nend'      100
+' Maximum time for this run (in sec) ........' 'tmax'      1E20
+' Start new sequence, if  IRSTRT = 0 ........' 'irstrt'    0
+' Common identification of output files .....' 'basenm'    'She5'
+' first output file has the following suffix ' 'suffix'    'aa'
+' Store restart file after NRSTRT timesteps .' 'nrstrt'    200
+' Store restart file after TRSTRT seconds ...' 'trstrt'    10000
+' Print model after NOUT timesteps ..........' 'nout'      2
+' Print model after TOUT seconds ............' 'tout'      1.D7
+' Initial size of the timestep (in sec)......' 'dtini'     0.1D0
+' Minimum size of timestep (in sec) .........' 'dtmin'     1.D-7
+' Maximum size of timestep (in sec) .........' 'dtmax'     1.D15
+' Grid length in x-direction (in cm) ........' 'gridlx'    299.19574D13
+' Number of grid points in x-direction ......' 'nx'        64
+' Inner radius as fraction of outer .........' 'rifrac'    0.02
+' Print timestep information, if ITSTP.ne.0..' 'itstp'     100
+' Distance of the two compact objects .......' 'bidist'    149.59787D13
+' Mass of star (solar mass) .................' 'pmass1'    1.D0
+' Mass of disk as fraction of star mass .....' 'pmass2'    0.1D0
+' PaWi on:1, off:0 ..........................' 'npawi'     0
+' Spin of NS: 1=point 2=solid 3=anti 4=colli.' 'nspin'     1
+' Spin of BH: k<0:none 0<k<1:apar=k k>1:hydro' 'akerr'     0
+' Hydro-gas  potential softening parameter...' 'soparg'    0.50D0
+' Switch gravitational waves off=0 ..........' 'mgonoff'   0
+' Switch deep potential corrections off=0 ...' 'mconoff'   0
+' Maximum density for VIDEO plots ...........' 'dymax'     14.D0
+' Maximum temperature for VIDEO plots .......' 'tpmax'     14.D0
+' Beta cooling parameter ....................' 'bcool'     0.D0
+' Irradiation temperature, Kelvin ...........' 'tirr'      10.D0

@@ -1,0 +1,46 @@
+      common /hydro/ rho   (q), u    (q), ut   (q), utt  (q), p     (q),
+     &               v     (q), e    (q), ek   (q), ei   (q), enu   (q),
+     &               rhonu (q), unu  (q), utnu (q), uttnu(q), pnu   (q),
+     &               rhoav (q), uav  (q), utav (q), uttav(q), pav   (q),
+     &               rhoflx(q), uflx (q), utflx(q), eflx (q), uttflx(q),
+     &               rhol  (q), ul   (q), utl  (q), uttl (q), pl    (q),
+     &               rhor  (q), ur   (q), utr  (q), uttr (q), pr    (q),
+     &               vl    (q), vr   (q), we   (q), w    (q), urel  (q),
+     &               cflno (q), c    (q), ce   (q), ugrid(q), tmp   (q),
+     &               game  (q), gamel(q), gamer(q),gameav(q), grav  (q),
+     &               gamc  (q), gamcl(q), gamcr(q), gravl(q), gravr (q),
+     &               che (q,qc), chenu(q,qc), cheav (q,qc),       ye(q),
+     &               chel(q,qc), cher (q,qc), cheflx(q,qc),   
+     &               urlx  (q), urlxl (q), urlxr (q)
+ 
+      common /interpo/dela  (q), flatn (q), flatn1(q),
+     &                drho  (q), du    (q), dut   (q), dutt  (q),
+     &                dp    (q), dgrav (q), rho6  (q), u6    (q),
+     &                ut6   (q), utt6  (q), p6    (q), grav6 (q),
+     &                dgame (q), game6 (q), dgamc (q), gamc6 (q), 
+     &                dche(q,qc), che6(q,qc),          de    (q),
+     &                durlx (q), urlx6 (q) 
+ 
+      common /reman/ ppl   (q), pml   (q), p0l   (q),
+     &               upl   (q), uml   (q), u0l   (q),
+     &               ut0l  (q), utt0l (q), utts  (q),
+     &               rhopl (q), rhoml (q), rho0l (q),
+     &               clft  (q), plft  (q), uttlft(q), uttrgt(q),
+     &               ulft  (q), vlft  (q), utlft (q), wlft  (q),
+     &               crght (q), prght (q),
+     &               urght (q), vrght (q), utrght(q), wrght (q),
+     &               pstar (q), ustar (q), vstar (q), cestar(q),
+     &               rhostr(q), westar(q), ps    (q), us    (q),
+     &               uts   (q), vs    (q), rhos  (q), ws    (q),
+     &               ces   (q), wes   (q), gmstar(q),
+     &               game0l(q), gmelft(q), gmergt(q), gamc0l(q),
+     &               gmclft(q), gmcrgt(q), games (q), gamcs (q),
+     &               chelft(q,qc), chergt(q,qc), ches(q,qc), 
+     &               chestr(q,qc)
+ 
+      common /dphi/ dphidx(q), dphdxo(q), d2phdx(q)
+
+      common /coeffs/ coeff1(q), coeff2(q), coeff3(q), coeff4(q),
+     &                coeff5(q)
+
+C$OMP THREADPRIVATE (/hydro/, /interpo/, /reman/, /dphi/, /coeffs/)

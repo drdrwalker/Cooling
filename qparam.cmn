@@ -1,0 +1,12 @@
+      implicit real*8  (a-h,o-z)
+      implicit integer*4  (i-n)
+
+      integer*4      q, qx, qy, qz,  qb, qzg,  ngrd, nfine,  qc
+
+      parameter ( qx = 64 ,  qy = qx ,  qz = qx/4 )
+      parameter ( qb = 8  ,  qc = 2  ,  qzg= qx/2 )
+      parameter ( q  = qx+qb )
+      parameter ( ngrd = 4, nfine = 2 )
+
+      parameter ( lzero=0, lone=1, ltwo=2, lthree=3 )
+      parameter (one=1.D0, two=2.D0, zero=0.D0, half=0.5D0, ten=10.D0)

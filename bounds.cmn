@@ -1,0 +1,32 @@
+      common/bounds/
+     &      bxdens(qb,qy,qz), bydens(qx,qb,qz), bzdens(qx,qy,qb),
+     &      bxener(qb,qy,qz), byener(qx,qb,qz), bzener(qx,qy,qb),
+     &      bxgpot(qb,qy,qz), bygpot(qx,qb,qz), bzgpot(qx,qy,qb),
+     &      bxvelx(qb,qy,qz), byvelx(qx,qb,qz), bzvelx(qx,qy,qb),
+     &      bxvely(qb,qy,qz), byvely(qx,qb,qz), bzvely(qx,qy,qb),
+     &      bxvelz(qb,qy,qz), byvelz(qx,qb,qz), bzvelz(qx,qy,qb),
+     &      bxgold(qb,qy,qz), bygold(qx,qb,qz), bzgold(qx,qy,qb),
+     &      bxchem(qb,qy,qz,qc),bychem(qx,qb,qz,qc),bzchem(qx,qy,qb,qc),
+     &      originx, originy, originz,
+     &      nox1, noy1, noz1, nox2, noy2, noz2, overx1, overy1,
+     &      il1, ir1, il2, ir2, jl1, jr1, jl2, jr2, noq, nq, ftemp
+
+      common/privindex/
+     &      qty(q,27), qtymin(q), qtymax(q), sgnm, sgnp,
+     &      icm, ic, icp, jcm, jc, jcp, kcm, kc, kcp
+cC$OMP THREADPRIVATE(/privindex/)
+ 
+      logical*4 overx1, overx2, overy1, overy2
+ 
+      common/flxbnd/  flxrho(qx,qx,2,ngrd,3), flxe  (qx,qx,2,ngrd,3),
+     &                flxux (qx,qx,2,ngrd,3), flxuy (qx,qx,2,ngrd,3),
+     &                flxuz (qx,qx,2,ngrd,3), flxche(qx,qx,2,ngrd,3,qc)
+
+      common/icfjcf/  icf(2), jcf(2), kcf(2)
+c these must remain shared 
+
+      integer*4  nloss, ndir
+      parameter ( nloss = 6, ndir = 5 )  ! 6 types of losses, 6-1 directions
+      common/neutbd/  bodep(qx,qy,nloss,ndir,ngrd),
+     &                btdis(qx,qy,nloss,ndir,ngrd), km, kp   !-1:z-reflection
+      integer*4 km, kp		

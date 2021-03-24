@@ -1,0 +1,18 @@
+      common /points/ pmass1, posx1, posy1, velx1, vely1, angm1,
+     &                pmass2, posx2, posy2, velx2, vely2, angm2,
+     &                dto,    polx1, poly1, polx2, poly2, eint1,
+     &                        vlox1, vloy1, vlox2, vloy2,
+     &                cenx, ceny, cenz, wdrad, bhdfac,
+     &                cmgax, cmgay, vcmgx, vcmgy, awdprx, awdpry,
+     &                tesvar, angcc1, akerr, npawi
+ 
+      common /wave/ phireac(qx,qy,qz), adderg(qx,qy,qz),
+     &                 dij3dt(3,3),       dij2dt(3,3),
+     &                gdij3dt(3,3,ngrd), gdij2dt(3,3,ngrd),
+     &                tlzgrav
+
+c      common /relax/ 
+
+
+
+

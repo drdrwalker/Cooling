@@ -1,0 +1,33 @@
+      integer*4 relaxon
+      parameter ( relaxon = 0 )
+
+      common /hyd1val/velx  ( qx, qy, qz, ngrd ),
+     &                vely  ( qx, qy, qz, ngrd ),
+     &                velz  ( qx, qy, qz, ngrd ),
+     &                densty( qx, qy, qz, ngrd ),
+     &                energy( qx, qy, qz, ngrd ),
+     &                press ( qx, qy, qz, ngrd ),
+     &                gpot  ( qx, qy, qz, ngrd ),
+     &                gtpot ( qx, qy, qz, ngrd )
+      common /hyd2val/gchi  ( qx, qy, qz, ngrd ),
+     &                rgarr ( qx, qy, qz, ngrd ),
+     &                chem  ( qx, qy, qz, ngrd, qc ),
+     &                bhdens( qx, qy, qz, ngrd ),
+     &                temper( qx, qy, qz, ngrd ),
+     &                tmpent( qx, qy, qz, ngrd ),
+     &                vxold ( qx, qy, qz, ngrd ),
+     &                vyold ( qx, qy, qz, ngrd )
+      common /hyd3val/vzold ( qx, qy, qz, ngrd ),
+     &                dold  ( qx, qy, qz, ngrd ),
+     &                eold  ( qx, qy, qz, ngrd ),
+     &                bakpot( qx, qy, qz, ngrd ),
+     &                baktpo( qx, qy, qz, ngrd ),
+     &                bakchi( qx, qy, qz, ngrd ),
+     &                bakrg ( qx, qy, qz, ngrd )
+      common /hyd4val/
+     &   relaxvx(1*relaxon:(qx+qb)*relaxon, 1*relaxon:(qy+qb)*relaxon,
+     &           1*relaxon:(qz+qb)*relaxon, ngrd )
+     &  ,relaxvy(1*relaxon:(qx+qb)*relaxon, 1*relaxon:(qy+qb)*relaxon,
+     &           1*relaxon:(qz+qb)*relaxon, ngrd )
+     &  ,relaxvz(1*relaxon:(qx+qb)*relaxon, 1*relaxon:(qy+qb)*relaxon,
+     &           1*relaxon:(qz+qb)*relaxon, ngrd )

@@ -1,0 +1,38 @@
+ FFLAGS = -g -pg -O1  -ffpe-trap=invalid,zero,overflow    -ffixed-form  -fno-range-check
+
+#FFLAGS = -O3   -ffixed-form  -fopenmp -mcmodel=medium
+#FFLAGS = -O3 -g -pg  -fno-range-check  -ffixed-form  -fopenmp
+
+#FFLAGS = -O3  -g -pg  -fno-range-check  -ffixed-form  -mcmodel=medium  # -fopenmp
+FFLAGS2 = $(FFLAGS)  -xf77-cpp-input
+
+
+ppd64:		grb.o gravzz.o grids.o gwaves.o init.o inout.o ppm.o rays.o eos.o ppdmake.gfortran
+		gfortran $(FFLAGS) grb.o gravzz.o grids.o gwaves.o init.o inout.o ppm.o rays.o eos.o -o ppd64
+
+grb.o:		grb.f qparam.cmn squants.cmn compct.cmn grnest.cmn ppdmake.gfortran
+		gfortran $(FFLAGS2) -c grb.f
+
+gravzz.o:	gravzz.f qparam.cmn ppdmake.gfortran
+		gfortran $(FFLAGS2) -c gravzz.f
+
+grids.o:	grids.f qparam.cmn squants.cmn aquants.cmn compct.cmn grnest.cmn ppms.cmn bounds.cmn ppdmake.gfortran
+		gfortran $(FFLAGS2) -c grids.f
+
+gwaves.o:	gwaves.f qparam.cmn squants.cmn aquants.cmn compct.cmn grnest.cmn bounds.cmn ppdmake.gfortran
+		gfortran $(FFLAGS2) -c gwaves.f
+
+init.o:		init.f qparam.cmn squants.cmn aquants.cmn rays.cmn compct.cmn grnest.cmn ppdisk.cmn ppdmake.gfortran
+		gfortran $(FFLAGS2) -c init.f
+
+inout.o:	inout.f qparam.cmn squants.cmn aquants.cmn rays.cmn compct.cmn grnest.cmn ppms.cmn eos.cmn ppdmake.gfortran
+		gfortran $(FFLAGS2) -c inout.f
+
+ppm.o:		ppm.f qparam.cmn squants.cmn aquants.cmn compct.cmn grnest.cmn ppms.cmn bounds.cmn eos.cmn ppdisk.cmn ppdmake.gfortran
+		gfortran $(FFLAGS2) -c ppm.f
+
+rays.o:		rays.f qparam.cmn squants.cmn aquants.cmn rays.cmn compct.cmn grnest.cmn ppdmake.gfortran
+		gfortran $(FFLAGS2) -c rays.f
+
+eos.o:		eos.f qparam.cmn squants.cmn aquants.cmn eos.cmn ppdisk.cmn ppdmake.gfortran
+		gfortran $(FFLAGS2) -c eos.f

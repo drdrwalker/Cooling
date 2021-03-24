@@ -1,0 +1,38 @@
+#FFLAGS = -O2 -ext_names=underscores 
+#FFLAGS = -O3 -convert big_endian -fpp -openmp -r8
+ FFLAGS = -g -O3 -convert big_endian -fpp -r8
+# FFLAGS = -g -O3 -fpp -r8
+
+
+grb128:		grb.o gravzz.o grids.o gwaves.o init.o inout.o ppm.o rays.o neutrino.o eos.o makefile.ifort
+		ifort $(FFLAGS) grb.o gravzz.o grids.o gwaves.o init.o inout.o ppm.o rays.o neutrino.o eos.o -o grb128
+
+grb.o:		grb.f qparam.cmn squants.cmn compct.cmn grnest.cmn makefile.ifort
+		ifort $(FFLAGS) -c grb.f
+ 
+gravzz.o:	gravzz.f qparam.cmn makefile.ifort
+		ifort $(FFLAGS) -c gravzz.f
+ 
+grids.o:	grids.f qparam.cmn squants.cmn aquants.cmn compct.cmn grnest.cmn ppms.cmn bounds.cmn makefile.ifort
+		ifort $(FFLAGS) -c grids.f
+ 
+gwaves.o:	gwaves.f qparam.cmn squants.cmn aquants.cmn compct.cmn grnest.cmn bounds.cmn makefile.ifort
+		ifort $(FFLAGS) -c gwaves.f
+ 
+init.o:		init.f qparam.cmn squants.cmn aquants.cmn rays.cmn compct.cmn grnest.cmn makefile.ifort
+		ifort $(FFLAGS) -c init.f
+ 
+inout.o:	inout.f qparam.cmn squants.cmn aquants.cmn rays.cmn compct.cmn grnest.cmn ppms.cmn eos.cmn makefile.ifort
+		ifort $(FFLAGS) -c inout.f
+ 
+ppm.o:		ppm.f qparam.cmn squants.cmn aquants.cmn compct.cmn grnest.cmn ppms.cmn bounds.cmn eos.cmn makefile.ifort
+		ifort $(FFLAGS) -c ppm.f
+ 
+rays.o:		rays.f qparam.cmn squants.cmn aquants.cmn rays.cmn compct.cmn grnest.cmn makefile.ifort
+		ifort $(FFLAGS) -c rays.f
+
+neutrino.o:	neutrino.f qparam.cmn squants.cmn aquants.cmn grnest.cmn makefile.ifort
+		ifort $(FFLAGS) -c neutrino.f
+ 
+eos.o:		eos.f qparam.cmn squants.cmn aquants.cmn eos.cmn makefile.ifort
+		ifort $(FFLAGS) -c eos.f
