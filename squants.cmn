@@ -1,0 +1,49 @@
+      common /floats/ time, dtini, dtmin, dtmax, tmax,
+     &                cfl, deltax, cgr,
+     &                small, smlrho, smallu, smallp, smalle, smlche(qc),
+     &                smltme, ak1, ak2, omg1, omg2, sig1, sig2,
+     &                eta1, eta2, ak0, epsln, epsiln, cvisc,
+     &                tout, tplt, smass, gridlx, gridly, gridlz,
+     &                rhoin, uin, utin, pin, ein,
+     &                gamein, gamcin, chein(qc),
+     &                gin, tin, uttin, gamma, signif, amu, gascon,
+     &                forthd, trstrt, trst, tout1, pi, g, bidist,
+     &                gascst, radcst, rmue, solmas, cc, soparp, soparg,
+     &                bndmnx(qx,qx), bndmxx(qx,qx), bndmny(qx,qx),
+     &                bndmxy(qx,qx), bndmnz(qx,qx), bndmxz(qx,qx),
+     &                refl  (qx,qx), refr (qx,qx), floutl(qx,qx),
+     &                floutr(qx,qx), flinl(qx,qx), flinr (qx,qx),
+     &                elot, ergboun, ergwave, egquel, gmunb, gasmas,
+     &                enuloss, eneloss, enaloss, enxloss, corrmax,
+     &                enelo, enalo, enxlo, anelo, analo, anxlo, angunb,
+     &                gasmol
+
+      common /intgrs/ nx, ny, nz,   nnn,  nxh, nyh, nzh,
+     &                np1, np2, np3, np4, np5, np6, np7, np8,
+     &                nsdim, nstep, nout, nplt, nriem, igodu,
+     &                igeom, nend, irstrt, nrstrt, mgonoff, mconoff,
+     &                nout1, ncons, nrst, itstp, ifilm, blackhole,
+     &                newwr,nspin,ncount,ncountaccel,ncountpress
+
+      logical blackhole, newwr
+
+      common /grd/  dx(q), dtdx(q), dtgg(ngrd), dtcc(ngrd),
+     &              dtppm, dtg, dtc, velmax(ngrd), dtn, dte,
+     &              ugridx(qx,ngrd), ugridy(qy,ngrd), ugridz(qz,ngrd)
+
+      common /ropo/ ro(qx,qy,qz), po(qx,qy,qz)
+
+      character*7  rstfil, outfil, vidfil, neufil
+      character*8  label
+      character*4  basenm
+      character*2  suffix
+      character*30 home
+      character*30 homedata
+      common /chara/ label, rstfil, outfil, vidfil, neufil,
+     &              basenm, suffix, home, homedata
+
+      character*8    ouxcha, vidcha, rgbcha
+      common /outp/  ouxcha, vidcha, rgbcha
+
+      common /tmpm/ tmpmax, itm, jtm, ktm, itmgr, tempo,
+     &              sumbulk,  sumshear,  sumneutr, sumshock
